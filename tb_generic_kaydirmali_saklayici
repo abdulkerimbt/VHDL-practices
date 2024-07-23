@@ -9,20 +9,20 @@ end tb_generic_kaydirmali_saklayici;
 	
 		component generic_kaydirmali_saklayici is
 		Port(
-			in_clk 		: in std_logic;
+			in_clk 			: in std_logic;
 			
-			in_rst 		: in std_logic;
-			in_yon 		: in std_logic;
-			in_giris	: in std_logic;
-			out_cikis	: out std_logic_vector(3 downto 0));
+			in_rst 			: in std_logic;
+			in_director 	: in std_logic;
+			in_bit			: in std_logic;
+			out_bit			: out std_logic_vector(3 downto 0));
 		end component;
 		
 		constant CLK_PERIOD : time := 150 ns;
 		signal in_clk : std_logic := '0';
 		signal in_rst : std_logic := '0';
-		signal in_yon : std_logic := '0';
-		signal in_giris : std_logic := '0';
-		signal out_cikis : std_logic_vector(3 downto 0) := (others =>'0');
+		signal in_director : std_logic := '0';
+		signal in_bit : std_logic := '0';
+		signal out_bit : std_logic_vector(3 downto 0) := (others =>'0');
 		
 	begin
 	
@@ -42,28 +42,28 @@ end tb_generic_kaydirmali_saklayici;
 	
 	process
 	begin
-		in_yon <= '0'; wait for  350 ns;
-		in_yon <= '1'; wait for  350 ns;
-		in_yon <= '1'; wait for  300 ns;
+		in_director <= '0'; wait for  350 ns;
+		in_director <= '1'; wait for  350 ns;
+		in_director <= '1'; wait for  300 ns;
 	end process;
 	
 	process
 	begin
-		in_giris <= '1'; wait for CLK_PERIOD;
-		in_giris <= '0'; wait for CLK_PERIOD;
-		in_giris <= '1'; wait for CLK_PERIOD;
-		in_giris <= '0'; wait for CLK_PERIOD;
-		in_giris <= '1'; wait for 3 * CLK_PERIOD;
-		in_giris <= '0'; wait for CLK_PERIOD;
+		in_bit <= '1'; wait for CLK_PERIOD;
+		in_bit <= '0'; wait for CLK_PERIOD;
+		in_bit <= '1'; wait for CLK_PERIOD;
+		in_bit <= '0'; wait for CLK_PERIOD;
+		in_bit <= '1'; wait for 2 * CLK_PERIOD;
+		in_bit <= '0'; wait for CLK_PERIOD;
 	end process;
 	
 	generic_kaydirmali_saklayici_map : generic_kaydirmali_saklayici
 	port map(
-	in_clk 		=> in_clk,
-	in_rst 		=> in_rst,
-	in_yon 		=> in_yon,
-	in_giris 	=> in_giris,
-	out_cikis	=> out_cikis
+	in_clk 				=> in_clk,
+	in_rst 				=> in_rst,
+	in_director 		=> in_director,
+	in_bit 				=> in_bit,
+	out_bit				=> out_bit
 	);
 end behavioral;
 	
