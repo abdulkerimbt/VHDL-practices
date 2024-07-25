@@ -1,0 +1,7 @@
+Burada yer alan VHDL ile yazılmış RTL kodda bilgisayarınızda yer alan bir text dosyayı okumak için kullandığımız 
+
+endfile(dosya)
+readline (dosya, satir)
+read(satir, data)
+
+komutlarının kullanımı ile ilgili kısa bir kodlama bulunmaktadır.

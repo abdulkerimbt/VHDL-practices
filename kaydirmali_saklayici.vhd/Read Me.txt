@@ -1,0 +1,4 @@
+Burada yer alan kodlarda generic 4 bit yapıda bir kaydırmalı sayaç yapısı vardır.
+'in_director' girişinin '1' veya '0' değerine göre sağa kaydırarak veya sola kaydırarak 'in_bit' girişinden gelen değerleri saklamaktadır.
+
+Kodlar kopyala yapıştır çalıştır şeklinde hazırdır. Direkt kullanılabilir.
