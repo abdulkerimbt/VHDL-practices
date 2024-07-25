@@ -1,0 +1,2 @@
+İleri veya geri sayabilen,
+Kaç bit sayabileceğini generic olarak ayarlayabildiğimiz bir sayaç uygulamasıdır.
